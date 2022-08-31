@@ -1,20 +1,24 @@
 let nota;
-let botao1 = document.querySelector(".um");
-let botao2 = document.querySelector(".dois");
-let botao3 = document.querySelector(".tres");
-let botao4 = document.querySelector(".quatro");
-let botao5 = document.querySelector(".cinco");
-
-console.log(botao1);
-
-botao1.addEventListener("click", recebeNota(this));
-botao2.addEventListener("click", recebeNota(this));
-botao3.addEventListener("click", recebeNota(this));
-botao4.addEventListener("click", recebeNota(this));
-botao5.addEventListener("click", recebeNota(this));
+let botao1 = document.querySelector(".um").onclick = function() { recebeNota(this); };
+let botao2 = document.querySelector(".dois").onclick = function() { recebeNota(this); };
+let botao3 = document.querySelector(".tres").onclick = function() { recebeNota(this); };
+let botao4 = document.querySelector(".quatro").onclick = function() { recebeNota(this); };
+let botao5 = document.querySelector(".cinco").onclick = function() { recebeNota(this); };
 
 function recebeNota(botao) {
     nota = botao.value;
+    console.log(nota);
 }
 
-console.log(nota);
+let buttonSubmit = document.querySelector(".submit").onclick = function() {  };
+
+function confirmaNota() {
+    let body = document.getElementsByTagName("body");
+    let imagemThanks = document.createElement("img");
+    imagemThanks.setAttribute('src="assets/images/illustration-thank-you.svg"');
+    imagemThanks.setAttribute('alt="Thank You Illustration"');
+    imagemThanks.classList.add("submit");
+    body.appendChild(imagemThanks);
+    setInterval(3000);
+    document.location.reload(true);
+}
