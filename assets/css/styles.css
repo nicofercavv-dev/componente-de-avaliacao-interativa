@@ -106,11 +106,39 @@ button:hover {
     cursor: pointer;
 }
 
-.submit {
-    width: 400px;
-    height: 400px;
-    padding: 35px;
-    background-color: var(--cor4);
-    border-radius: 25px;
-    box-shadow: rgb(26, 26, 26) 0px 0px 10px;
+main.after-submit {
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.after-submit span {
+    background-color: hsl(215, 17%, 22%);
+    color: var(--cor6);
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.after-submit h1 {
+    text-align: center;
+}
+
+.after-submit p {
+    text-align: center;
+}
+
+main.animar {
+    animation-name: slide;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
