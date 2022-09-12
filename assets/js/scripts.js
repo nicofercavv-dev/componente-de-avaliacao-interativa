@@ -15,28 +15,40 @@ let buttonSubmit = document.querySelector(".submit").onclick = function() { conf
 
 function confirmaNota() {
 
-    let imagem = document.createElement("img");
-    let span = document.createElement("span");
-    let div = document.createElement("div");
-
-    while (main.firstChild) {
-        main.removeChild(main.firstChild);
+    if(!nota) {
+        let aviso = document.querySelector(".mensagem");
+        console.log(aviso);
+        const TEMPINHO = setTimeout(() => {
+            aviso.classList.toggle("mensagem-a-mostra");
+            aviso.classList.toggle("mensagem-animar");
+        }, 5000);
+        aviso.classList.toggle("mensagem-a-mostra");
+        aviso.classList.toggle("mensagem-animar");
     }
+    else {
+        let imagem = document.createElement("img");
+        let span = document.createElement("span");
+        let div = document.createElement("div");
 
-    main.classList.add("after-submit");
+        while (main.firstChild) {
+            main.removeChild(main.firstChild);
+        }
 
-    imagem.setAttribute("src", "assets/images/illustration-thank-you.svg");
-    imagem.setAttribute("alt", "Smartphone Illustration");
-    span.innerText = `You selected ${nota} out of 5`;
-    div.innerHTML = "<h1>Thank you!</h1>\n<p>We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch! </p>";
+        main.classList.add("after-submit");
 
-    main.appendChild(imagem);
-    main.appendChild(span);
-    main.appendChild(div);
+        imagem.setAttribute("src", "assets/images/illustration-thank-you.svg");
+        imagem.setAttribute("alt", "Smartphone Illustration");
+        span.innerText = `You selected ${nota} out of 5`;
+        div.innerHTML = "<h1>Thank you!</h1>\n<p>We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch! </p>";
 
-    main.classList.toggle("animar");
+        main.appendChild(imagem);
+        main.appendChild(span);
+        main.appendChild(div);
 
-    const INTERVALO_PARA_RECARREGAR_PAGINA = setTimeout(() => {
-        document.location.reload(true);
-    }, 5000);
+        main.classList.toggle("animar");
+
+        const INTERVALO_PARA_RECARREGAR_PAGINA = setTimeout(() => {
+            document.location.reload(true);
+        }, 5000);
+    }
 }

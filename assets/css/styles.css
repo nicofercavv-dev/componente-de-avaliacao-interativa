@@ -135,10 +135,39 @@ main.animar {
 @keyframes slide {
     from {
         opacity: 0;
-        transform: translateX(-50px);
+        transform: translateX(-10px);
     }
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+.mensagem {
+    color: rgb(255, 38, 38);
+    position: absolute;
+    top: 82%;
+    text-align: center;
+    display: none;
+}
+
+.mensagem-a-mostra {
+    display: block;
+}
+
+.mensagem-animar {
+    animation-name: fade-in-out;
+    animation-duration: 5s;
+}
+
+@keyframes fade-in-out {
+    0% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
